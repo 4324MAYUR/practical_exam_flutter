@@ -16,7 +16,7 @@ Widget catagory({
                     : selected == e['category'])
                 .map(
                   (e) => Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(16),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context)
@@ -26,17 +26,13 @@ Widget catagory({
                         height: 380,
                         width: 240,
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
-                          ),
+                          color: Colors.grey.shade200,
                           borderRadius:
                               const BorderRadius.all(Radius.circular(30)),
                           boxShadow: const [
                             BoxShadow(
                               color: Colors.grey,
-                              spreadRadius: 2,
+                              spreadRadius: 3,
                               blurRadius: 2,
                               offset: Offset(3, 3),
                             ),
@@ -62,7 +58,7 @@ Widget catagory({
                                   e['title'],
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ),
@@ -73,7 +69,10 @@ Widget catagory({
                                   child: IconButton(
                                     onPressed: () {
                                       {
-                                        cart.add(e);
+                                        if (!cart.contains(e)) {
+                                          cart.add(e);
+                                          e['qty'] = 1;
+                                        }
                                       }
                                     },
                                     icon: const Icon(Icons.add_shopping_cart),

@@ -16,14 +16,14 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
         title: const Center(
           child: Text(
             "HOME PAGE",
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 20,
             ),
           ),
         ),
@@ -31,7 +31,7 @@ class _home_pageState extends State<home_page> {
           IconButton(
             icon: const Icon(
               Icons.add_shopping_cart,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.of(context).pushNamed('cart_page');
@@ -90,11 +90,15 @@ class _home_pageState extends State<home_page> {
                     fontSize: 14,
                   ),
                 ),
+                20.toH(),
                 catagory(context: context, selected: 'All Products'),
                 20.toH(),
                 Text(
                   selected.touper,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
                 ),
                 20.toH(),
                 catagory(context: context, selected: selected),
